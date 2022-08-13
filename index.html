@@ -12,8 +12,8 @@
         font-weight: bold;
       }
     </style>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./styles2.css">
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles2.css" />
   </head>
   <body>
     <nav>
@@ -38,13 +38,14 @@
         </p>
         <dl>
           <dt>Website</dt>
-          <dd><a href="https://google.com">google.com</dd>
+          <dd><a href="https://google.com">google.com</a></dd>
           <dt>Phone</dt>
           <dd>123-456-7890</dd>
           <dt>LinkedIn</dt>
-          <dd><a href="https://www.linkedin.com">https://www.linkedin.com</a></dd>
+          <dd>
+            <a href="https://www.linkedin.com">https://www.linkedin.com</a>
+          </dd>
         </dl>
-
       </section>
 
       <article id="aboutme">
@@ -52,7 +53,9 @@
         <p>
           Hi I'm Siddharth, a <em>desciplined</em> JS developer and a skater.
         </p>
-        <aside><p><small>Keep Going</small></p></aside>
+        <aside>
+          <p><small>Keep Going</small></p>
+        </aside>
         <footer>Contact me</footer>
       </article>
 
@@ -60,16 +63,20 @@
         <h2>Services</h2>
 
         <ul>
-          <li>Fullstack development</li><li>Mobile development</li><li>Skating</li>
+          <li>Fullstack development</li>
+          <li>Mobile development</li>
+          <li>Skating</li>
         </ul>
       </section>
 
       <section id="skills">
         <h2>Skills</h2>
         <ul class="resume-list">
-            <li>HTML Markup your content with semantic HTML.</li>
-            <li>CSS Layout your content visually for multiple devices.</li>
-            <li>Javascript Make you content more interactive, and web applications.</li>
+          <li>HTML Markup your content with semantic HTML.</li>
+          <li>CSS Layout your content visually for multiple devices.</li>
+          <li>
+            Javascript Make you content more interactive, and web applications.
+          </li>
         </ul>
       </section>
 
@@ -101,8 +108,10 @@
             </tr>
           </tbody>
           <tfoot>
-            <td colspan="2">Total</td>
-            <td>10</td>
+            <tr>
+              <td colspan="2">Total</td>
+              <td>10</td>
+            </tr>
           </tfoot>
         </table>
       </section>
@@ -112,64 +121,83 @@
       <section id="testimonials">
         <h2>Testimonials</h2>
         <blockquote>
-          <p>I love working with Siddharth! I admire his <strong>dedication towards his work.</strong></p>
+          <p>
+            I love working with Siddharth! I admire his
+            <strong>dedication towards his work.</strong>
+          </p>
         </blockquote>
-        
+
         <blockquote>
-          <p>He helped me in a learning a difficult transition in an skating session</p>
+          <p>
+            He helped me in a learning a difficult transition in an skating
+            session
+          </p>
         </blockquote>
       </section>
 
       <section id="mailingaddress">
         <h2>Mailing Address</h2>
-        <address>
-          111 Main st.<br>Somewhere, IN 666666
-        </address>
+        <address>111 Main st.<br />Somewhere, IN 666666</address>
       </section>
-      
+
       <section id="contactme">
         <h2>Contact Me</h2>
         <form action="./dosomething.html" method="POST">
           <p>
             <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required/>
+            <input type="text" id="name" name="name" required />
           </p>
           <p>
             <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" required/>
+            <input type="email" id="email" name="email" required />
           </p>
           <p>
             <label for="whycontacting">Why Contacting</label>
             <select name="whycontacting" id="whycontacting">
-              <option name="jobinterview">Job interview</option>
-              <option name="skatinghelp">Skating help</option>
+              <option value="jobinterview">Job interview</option>
+              <option value="skatinghelp">Skating help</option>
             </select>
           </p>
           <p>
-            <lable for="comments">Comments</label>
-            <textarea rows="3"></textarea>
+            <label for="comments">Comments</label>
+            <textarea rows="3" id="comments"></textarea>
           </p>
           <fieldset>
             <legend>Best contact time</legend>
             <p>
               <label for="contacttime1">Monring</label>
-              <input type="radio" value="monrning" id="contacttime1" name="contacttime" />
+              <input
+                type="radio"
+                value="monrning"
+                id="contacttime1"
+                name="contacttime"
+              />
             </p>
             <p>
               <label for="contacttime2">Afternoon</label>
-              <input type="radio" value="afternoon" id="contacttime2" name="contacttime" />
+              <input
+                type="radio"
+                value="afternoon"
+                id="contacttime2"
+                name="contacttime"
+              />
             </p>
             <p>
               <label for="contacttime3">Evening</label>
-              <input type="radio" value="evening" id="contacttime3" name="contacttime" />
+              <input
+                type="radio"
+                value="evening"
+                id="contacttime3"
+                name="contacttime"
+              />
             </p>
-            
+
             <p>
               <label for="asap">ASAP</label>
               <input type="checkbox" id="asap" name="asap" />
             </p>
           </fieldset>
-          
+
           <p>
             <button type="submit">Send</button>
           </p>
