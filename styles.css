@@ -1,13 +1,7 @@
-a:focus,
-a:hover {
-  color: red;
+a:where(:not(:hover)) {
+  text-decoration: none;
 }
 
-input:focus,
-select:focus {
-  outline: 2px solid black;
-}
-
-ul.resume-list {
-  font-weight: bold;
+nav a {
+  text-decoration: underline;
 }
