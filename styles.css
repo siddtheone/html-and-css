@@ -1,3 +1,13 @@
-.resume-list {
+a:focus,
+a:hover {
+  color: red;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid black;
+}
+
+ul.resume-list {
   font-weight: bold;
 }
