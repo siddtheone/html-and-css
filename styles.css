@@ -1,7 +1,13 @@
-a:where(:not(:hover)) {
-  text-decoration: none;
+* {
+  box-sizing: border-box;
 }
 
-nav a {
-  text-decoration: underline;
+.resume-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.resume-fieldset legend {
+  padding: 0;
 }
