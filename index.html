@@ -40,6 +40,11 @@
 
       <article id="aboutme">
         <header><h2>About Me</h2></header>
+        <img
+          src="./images/picture.jpg"
+          alt="someone watching a lake"
+          class="my-picture"
+        />
         <p>
           Hi I'm Siddharth, a <em>desciplined</em> JS developer and a skater.
         </p>
@@ -163,23 +168,25 @@
       <section id="contactme">
         <h2>Contact Me</h2>
         <form action="./dosomething.html" method="POST">
-          <p>
-            <label for="name">Your Name</label>
+          <p class="field">
+            <label for="name" class="label-standard">Your Name</label>
             <input type="text" id="name" name="name" required />
           </p>
-          <p>
-            <label for="email">Your Email</label>
+          <p class="field">
+            <label for="email" class="label-standard">Your Email</label>
             <input type="email" id="email" name="email" required />
           </p>
-          <p>
-            <label for="whycontacting">Why Contacting</label>
+          <p class="field">
+            <label for="whycontacting" class="label-standard"
+              >Why Contacting</label
+            >
             <select name="whycontacting" id="whycontacting">
               <option value="jobinterview">Job interview</option>
               <option value="skatinghelp">Skating help</option>
             </select>
           </p>
-          <p>
-            <label for="comments">Comments</label>
+          <p class="field">
+            <label for="comments" class="label-standard">Comments</label>
             <textarea rows="3" id="comments"></textarea>
           </p>
           <fieldset class="resume-fieldset">
