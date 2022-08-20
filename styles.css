@@ -4,18 +4,21 @@
 
 body {
   font-size: 16px;
+  display: grid;
 }
 
 nav {
   position: sticky;
   inset-inline-start: 0;
   background-color: white;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul {
   display: flex;
   flex-wrap: wrap;
-  margin-inline: 0;
+  padding-inline: 0;
 }
 
 nav ul li {
@@ -67,6 +70,7 @@ main {
 
 blockquote.featured {
   order: -1;
+  flex: 1 0 auto;
 }
 
 .resume-fieldset {
@@ -96,4 +100,30 @@ blockquote.featured {
 .my-picture {
   max-inline-size: 75px;
   margin-inline-end: 1rem;
+}
+
+.flex-header,
+.motto {
+  flex-basis: 100%;
+}
+
+#portfolio {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(5, 1fr);
+  grid-template-areas:
+    "portfolio anchor img1 img2 img3"
+    "portfolio anchor img4 img5 img6";
+  grid-gap: 10px;
+}
+
+#portfolio h2 {
+  grid-area: portfolio;
+}
+
+#portfolio img {
+  max-inline-size: 100%;
+}
+
+img.anchor {
+  grid-area: anchor;
 }
