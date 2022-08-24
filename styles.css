@@ -1,5 +1,17 @@
+:root {
+  --accent-color: rgba(247, 77, 101, 0.9);
+}
+
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  display: grid;
+  margin-inline: 0;
+  margin-block: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
 h1,
@@ -16,18 +28,6 @@ h1 {
 
 h2 {
   margin-block-end: 0.75rem;
-}
-
-#aboutme h2 {
-  color: white;
-}
-
-body {
-  font-size: 16px;
-  display: grid;
-  margin-inline: 0;
-  margin-block: 0;
-  font-family: "Montserrat", sans-serif;
 }
 
 input,
@@ -48,6 +48,7 @@ nav ul {
   display: flex;
   flex-wrap: wrap;
   padding-inline: 0;
+  justify-content: center;
 }
 
 nav ul li {
@@ -61,7 +62,7 @@ main {
   padding-block: 0;
   margin-block: 0;
   display: grid;
-  grid-template-columns: 1fr 1024px 1fr;
+  grid-template-columns: 25px 1fr 25px;
   row-gap: 10px;
 }
 
@@ -69,9 +70,19 @@ main > * {
   grid-column: 2;
 }
 
+.social_logo {
+  inline-size: 1rem;
+}
+
 .full-bleed {
   grid-column: 1 / span 3;
-  padding-inline: calc((100% - 1024px) / 2);
+  padding-inline: 2rem;
+}
+
+.flex-header,
+.motto,
+#aboutme footer {
+  flex-basis: 100%;
 }
 
 #aboutme {
@@ -79,6 +90,22 @@ main > * {
   color: white;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+#aboutme h2 {
+  color: white;
+}
+
+#aboutme footer {
+  text-align: center;
+}
+
+#aboutme footer a,
+#aboutme footer a:visited,
+#aboutme footer a:hover {
+  color: white;
 }
 
 #aboutme aside {
@@ -86,8 +113,37 @@ main > * {
   text-align: center;
 }
 
-#aboutme footer {
-  text-align: center;
+#portfolio {
+  display: grid;
+
+  grid-template: 1fr / 1fr 1fr;
+  grid-template-areas:
+    "portfolio portfolio"
+    "anchor img1";
+  grid-gap: 10px;
+  align-items: end;
+  background-color: var(--accent-color);
+  padding-block: 1rem;
+}
+
+#portfolio h2 {
+  grid-area: portfolio;
+  align-self: start;
+  margin-block: 0;
+}
+
+#portfolio img {
+  max-inline-size: 100%;
+}
+
+#portfolio img:hover {
+  opacity: 0.7;
+  transition: opacity 0.5s;
+}
+
+img.anchor {
+  grid-area: anchor;
+  align-self: start;
 }
 
 #testimonials {
@@ -109,9 +165,13 @@ main > * {
   order: -2;
 }
 
-blockquote.featured {
+#testimonials blockquote.featured {
   order: -1;
   flex: 1 0 auto;
+  background-color: black;
+  color: white;
+  margin-inline-start: 1rem;
+  font-weight: bold;
 }
 
 .resume-fieldset {
@@ -138,62 +198,65 @@ blockquote.featured {
   margin-block-end: 1.25rem;
 }
 
-.my-picture {
-  max-inline-size: 75px;
-  margin-inline-end: 1rem;
-}
-
-.flex-header,
-.motto,
-#aboutme footer {
-  flex-basis: 100%;
-}
-
-#portfolio {
-  display: grid;
-  grid-template: repeat(2, 1fr) / repeat(5, 1fr);
-  grid-template-areas:
-    "portfolio anchor img1 img2 img3"
-    "portfolio anchor img4 img5 img6";
-  grid-gap: 10px;
-  align-items: end;
-  background-color: rgba(247, 77, 101, 0.9);
-  padding-block: 1rem;
-}
-
-#portfolio h2 {
-  grid-area: portfolio;
-  align-self: start;
-  margin-block: 0;
-}
-
-#portfolio img {
-  max-inline-size: 100%;
-}
-
-#portfolio img:hover {
-  opacity: 0.7;
-  transition: opacity 0.5s;
-}
-
-img.anchor {
-  grid-area: anchor;
-  align-self: start;
-}
-
 .button {
   background-color: #000000;
   color: white;
   font-family: "Montserrat", sans-serif;
-  padding: 0.5rem 1rem;
-  border: none;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border-inline: none;
+  border-block: none;
 }
 
 .button:hover {
-  background-color: rgba(247, 77, 101, 0.9);
+  background-color: var(--accent-color);
   transition: background-color 0.5s;
 }
 
-.social_logo {
-  inline-size: 1rem;
+.my-picture {
+  max-inline-size: 75px;
+  margin-inline-end: 0;
+}
+
+@media screen and (min-width: 767.98px) {
+  main {
+    grid-template-columns: 50px 1fr 50px;
+  }
+
+  #aboutme {
+    justify-content: initial;
+    text-align: initial;
+  }
+
+  .my-picture {
+    margin-inline-end: 1rem;
+  }
+
+  #portfolio {
+    grid-template: repeat(2, 1fr) / repeat(5, 1fr);
+    grid-template-areas:
+      "portfolio anchor img1 img2 img3"
+      "portfolio anchor img4 img5 img6";
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    grid-template-columns: 1fr 900px 1fr;
+  }
+
+  .full-bleed {
+    padding-inline: 15%;
+  }
+}
+
+@media print {
+  #aboutme {
+    background-color: white;
+    color: black;
+  }
+
+  #contactme {
+    display: none;
+  }
 }
